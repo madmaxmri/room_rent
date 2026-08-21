@@ -1,0 +1,91 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 898 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(TEMPLATES/VERIFY_OTP.HTML LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(verify_otp.html renders the OTP verification form used after phone login or phone signup) Tj
+T*
+(starts.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(TEMPLATE SETUP) Tj
+T*
+() Tj
+T*
+(Line 1: extends base.html.) Tj
+T*
+() Tj
+T*
+(Line 3: sets the Verify OTP page title.) Tj
+T*
+() Tj
+T*
+(Line 5: starts the content block.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(OTP PANEL) Tj
+T*
+() Tj
+T*
+(Lines 6-10: open the compact auth layout and display the destination phone number.) Tj
+T*
+() Tj
+T*
+(Lines 12-17: when demo_otp exists, show the demo OTP value for local development.) Tj
+T*
+() Tj
+T*
+(Lines 19-25: POST form with a six-digit numeric OTP input and submit button.) Tj
+T*
+() Tj
+T*
+(Lines 27-30: link back to login if the phone number is wrong.) Tj
+T*
+() Tj
+T*
+(Lines 31-33: close the panel, section, and content block.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000001139 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1265
+%%EOF

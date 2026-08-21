@@ -1,0 +1,160 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1757 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(TEMPLATES/BASE.HTML LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(base.html is the shared Jinja layout used by all pages. It defines the HTML shell, header,) Tj
+T*
+(profile menu, navigation, flash messages, footer, and JavaScript include.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(DOCUMENT HEAD) Tj
+T*
+() Tj
+T*
+(Lines 1-2: start the HTML document and set language to English.) Tj
+T*
+() Tj
+T*
+(Lines 3-8: define charset, responsive viewport, overridable title block, and CSS link.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(HEADER AND PROFILE) Tj
+T*
+() Tj
+T*
+(Lines 9-10: open the body and sticky site header.) Tj
+T*
+() Tj
+T*
+(Lines 11-31: if current_user exists, render the profile avatar button with image or) Tj
+T*
+(initials.) Tj
+T*
+() Tj
+T*
+(Lines 33-52: render the hidden profile popover header with avatar, name, and auth label.) Tj
+T*
+() Tj
+T*
+(Lines 54-71: show phone, email, and verified/pending status in a definition list.) Tj
+T*
+() Tj
+T*
+(Lines 73-75: add a sign-out link and close the profile menu.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(BRAND, NAVIGATION, AND STATUS) Tj
+T*
+() Tj
+T*
+(Lines 78-81: render the RoomRent brand link.) Tj
+T*
+() Tj
+T*
+(Lines 82-91: show Listings/Contact/Logout links for signed-in users, or Login/Sign up for) Tj
+T*
+(guests.) Tj
+T*
+() Tj
+T*
+(Lines 92-96: render the data source pill, which JavaScript updates from /api/storage.) Tj
+T*
+() Tj
+T*
+(Line 97: closes the header.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FLASH MESSAGES AND CONTENT) Tj
+T*
+() Tj
+T*
+(Lines 99-107: read Flask flashed messages and render them in an accessible flash stack.) Tj
+T*
+() Tj
+T*
+(Lines 109-111: open main and insert each page's content block.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FOOTER AND SCRIPT) Tj
+T*
+() Tj
+T*
+(Lines 113-122: render contact footer content.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 159 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(Line 123: load static/js/app.js with defer.) Tj
+T*
+() Tj
+T*
+(Lines 124-125: close the body and HTML document.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000002005 00000 n 
+0000002131 00000 n 
+0000002340 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+2466
+%%EOF

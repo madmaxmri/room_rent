@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}RoomRent - Property Details{% endblock %}
+
+{% block content %}
+  <section
+    class="detail-hero"
+    data-property-page
+    data-api-url="{{ url_for('api_listing_detail', listing_id=listing_id) }}"
+  >
+    <img data-property-image alt="">
+    <div class="detail-summary">
+      <p class="eyebrow" data-property-type-city>Loading property</p>
+      <h1 data-property-title>Loading property details...</h1>
+      <p data-property-address></p>
+      <p class="detail-price" data-property-price></p>
+    </div>
+  </section>
+
+  <section class="detail-layout" data-property-content hidden>
+    <article class="property-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Overview</p>
+          <h2>Property details</h2>
+        </div>
+        <span class="tag tag-static" data-property-featured hidden>Featured</span>
+      </div>
+
+      <dl class="detail-grid">
+        <div>
+          <dt>Rent</dt>
+          <dd data-property-rent></dd>
+        </div>
+        <div>
+          <dt>Deposit</dt>
+          <dd data-property-deposit></dd>
+        </div>
+        <div>
+          <dt>Bedrooms</dt>
+          <dd data-property-bedrooms></dd>
+        </div>
+        <div>
+          <dt>Bathrooms</dt>
+          <dd data-property-bathrooms></dd>
+        </div>
+        <div>
+          <dt>Area</dt>
+          <dd data-property-area></dd>
+        </div>
+        <div>
+          <dt>Furnishing</dt>
+          <dd data-property-furnished></dd>
+        </div>
+      </dl>
+
+      <h3>Description</h3>
+      <p data-property-description></p>
+
+      <h3>Amenities</h3>
+      <ul class="amenity-list" data-property-amenities></ul>
+    </article>
+
+    <aside class="inquiry-panel">
+      <h2>Contact owner</h2>
+      <p class="owner-line" data-property-owner></p>
+      <form action="{{ url_for('inquiry') }}" method="post" class="inquiry-form">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="listing_id" value="{{ listing_id }}" data-property-listing-id>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" value="{{ current_user.name }}" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" value="{{ current_user.email }}" required>
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" value="{{ current_user.phone }}">
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5">I am interested in this property. Please share visit timings.</textarea>
+        </label>
+        <button type="submit">Send inquiry</button>
+      </form>
+    </aside>
+  </section>
+
+  <section
+    class="content-section recommendations-section"
+    data-recommendations-section
+    data-api-url="{{ url_for('api_listing_recommendations', listing_id=listing_id) }}"
+    data-detail-url-template="{{ url_for('property_detail', listing_id=0) }}"
+    hidden
+  >
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Recommended rooms</p>
+        <h2>Similar stays from the database</h2>
+      </div>
+    </div>
+
+    <div class="listing-grid recommendation-grid" data-recommendations-grid hidden></div>
+    <div class="empty-state" data-recommendations-status>
+      <h3>Loading recommendations...</h3>
+      <p>Training a model from the available rental listings.</p>
+    </div>
+  </section>
+
+  <section class="empty-page" data-property-error hidden>
+    <h1>Property not found</h1>
+    <p>The listing may have been removed or is no longer available.</p>
+    <a class="button-secondary" href="{{ url_for('home') }}">Back to listings</a>
+  </section>
+{% endblock %}

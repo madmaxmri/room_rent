@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}RoomRent - Home Rentals{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-copy">
+        <p class="eyebrow">Home rentals</p>
+        <h1>Find a rental home that fits your budget and routine.</h1>
+        <p>Browse apartments, studios, villas, and shared rooms with clear rent, deposit, and owner details.</p>
+      </div>
+
+      <form class="search-panel" action="{{ url_for('home') }}" method="get">
+        <label>
+          <span>Location</span>
+          <input type="text" name="city" placeholder="City or area" value="{{ filters.city }}">
+        </label>
+        <label>
+          <span>Type</span>
+          <select name="property_type">
+            <option value="">Any type</option>
+            {% for option in ["Apartment", "Studio", "Villa", "Shared Room"] %}
+              <option value="{{ option }}" {% if filters.property_type == option %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Furnishing</span>
+          <select name="furnished_status">
+            <option value="">Any furnishing</option>
+            {% for option in ["Fully furnished", "Semi furnished", "Unfurnished"] %}
+              <option value="{{ option }}" {% if filters.furnished_status == option %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Min rent</span>
+          <input type="number" name="min_price" min="0" step="500" placeholder="10000" value="{{ filters.min_price }}">
+        </label>
+        <label>
+          <span>Max rent</span>
+          <input type="number" name="max_price" min="0" step="500" placeholder="50000" value="{{ filters.max_price }}">
+        </label>
+        <label>
+          <span>Beds</span>
+          <select name="bedrooms">
+            <option value="">Any</option>
+            {% for option in [1, 2, 3, 4] %}
+              <option value="{{ option }}" {% if filters.bedrooms == option|string %}selected{% endif %}>{{ option }}+</option>
+            {% endfor %}
+          </select>
+        </label>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="stats-strip" aria-label="Rental marketplace statistics">
+    <div>
+      <strong data-listings-count>0</strong>
+      <span>matching homes</span>
+    </div>
+    <div>
+      <strong>4</strong>
+      <span>property types</span>
+    </div>
+    <div>
+      <strong>24h</strong>
+      <span>owner response target</span>
+    </div>
+  </section>
+
+  <div class="home-shell">
+    <section class="content-section" id="listings">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Available now</p>
+          <h2>Rental listings</h2>
+        </div>
+        <a class="text-link" href="{{ url_for('home') }}">Clear filters</a>
+      </div>
+
+      <div class="empty-state" data-listings-status aria-live="polite">
+        <h3>Loading listings...</h3>
+        <p>Fetching the latest homes from the Flask API.</p>
+      </div>
+
+      <div
+        class="listing-grid"
+        data-listings-grid
+        data-api-url="{{ url_for('api_listings') }}"
+        data-detail-url-template="{{ url_for('property_detail', listing_id=0) }}"
+        hidden
+      ></div>
+    </section>
+  </div>
+{% endblock %}

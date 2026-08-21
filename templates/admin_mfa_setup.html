@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Authenticator MFA - RoomRent Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="admin-brand" href="{{ url_for('admin_dashboard') }}" aria-label="RoomRent admin dashboard">
+        <span>RA</span>
+        <strong>RoomRent Admin</strong>
+      </a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+        <a href="{{ admin_logout_url }}">Logout</a>
+      </nav>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="admin-flash-stack" aria-live="polite">
+          {% for category, message in messages %}
+            <p class="admin-flash admin-flash-{{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <p class="admin-eyebrow">Authenticator app</p>
+          <h1>Microsoft or Google Authenticator</h1>
+        </div>
+        <div class="admin-session-card">
+          <span>Admin</span>
+          <strong>{{ current_admin.name }}</strong>
+          <small>{% if mfa_enabled %}MFA enabled{% else %}MFA setup pending{% endif %}</small>
+        </div>
+      </section>
+
+      <section class="admin-panel admin-mfa-panel">
+        {% if mfa_enabled %}
+          <div class="admin-panel-head">
+            <div>
+              <p class="admin-eyebrow">Status</p>
+              <h2>MFA is enabled</h2>
+            </div>
+          </div>
+          <div class="admin-mfa-body">
+            <p>Authenticator app verification is active for this admin account.</p>
+            <form method="post" action="{{ url_for('admin_mfa_disable') }}" class="auth-form admin-inline-form">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+              <label>
+                <span>Confirm password to disable</span>
+                <input type="password" name="password" autocomplete="current-password" required>
+              </label>
+              <button type="submit">Disable MFA</button>
+            </form>
+          </div>
+        {% else %}
+          <div class="admin-panel-head">
+            <div>
+              <p class="admin-eyebrow">Setup</p>
+              <h2>Add this account in your authenticator app</h2>
+            </div>
+          </div>
+          <div class="admin-mfa-body">
+            <dl class="admin-secret-list">
+              <div>
+                <dt>Account</dt>
+                <dd>{{ current_admin.id }}</dd>
+              </div>
+              <div>
+                <dt>Setup key</dt>
+                <dd class="admin-secret-key">{{ secret }}</dd>
+              </div>
+              <div>
+                <dt>URI</dt>
+                <dd class="admin-secret-key">{{ otpauth_uri }}</dd>
+              </div>
+            </dl>
+
+            <form method="post" class="auth-form admin-inline-form">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+              <label>
+                <span>6-digit authenticator code</span>
+                <input type="text" name="totp" inputmode="numeric" autocomplete="one-time-code" maxlength="6" required>
+              </label>
+              <button type="submit">Enable MFA</button>
+            </form>
+          </div>
+        {% endif %}
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}" defer></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Signup - RoomRent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+  </head>
+  <body class="admin-login-body">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-stack" aria-live="polite">
+          {% for category, message in messages %}
+            <p class="flash flash-{{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <main>
+      <section class="auth-page admin-auth-page">
+        <div class="auth-panel">
+          <p class="eyebrow">Admin signup</p>
+          <h1>Create admin account</h1>
+
+          <form method="post" class="auth-form">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+            <label>
+              <span>Admin ID</span>
+              <input type="text" name="admin_id" autocomplete="username" required>
+            </label>
+            <label>
+              <span>Display name</span>
+              <input type="text" name="display_name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Admin secret key</span>
+              <input type="text" name="admin_secret_key" autocomplete="off" required>
+            </label>
+            {% if signup_code_required %}
+              <label>
+                <span>Signup code</span>
+                <input type="password" name="signup_code" autocomplete="off" required>
+              </label>
+            {% endif %}
+            <label>
+              <span>Password</span>
+              <input type="password" name="password" autocomplete="new-password" required>
+            </label>
+            <label>
+              <span>Confirm password</span>
+              <input type="password" name="confirm_password" autocomplete="new-password" required>
+            </label>
+            <button type="submit">Send OTP</button>
+          </form>
+
+          <div class="auth-links">
+            <a href="{{ admin_login_url }}">Back to login</a>
+          </div>
+        </div>
+        <div class="auth-visual" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}" defer></script>
+  </body>
+</html>

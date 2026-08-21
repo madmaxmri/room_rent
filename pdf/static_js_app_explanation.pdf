@@ -1,0 +1,222 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2176 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(STATIC/JS/APP.JS LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(app.js is the browser-side controller. It loads storage/listing/property API data, renders) Tj
+T*
+(cards/details, handles profile menu behavior, dismisses flash messages, and handles avatar) Tj
+T*
+(fallbacks.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(WRAPPER AND UTILITIES) Tj
+T*
+() Tj
+T*
+(Lines 1-2: wrap the script in an IIFE and enable strict mode.) Tj
+T*
+() Tj
+T*
+(Lines 4-8: configure INR currency formatting for Indian rent/deposit values.) Tj
+T*
+() Tj
+T*
+(Lines 10-15: text returns a fallback for null, undefined, or empty values and stringifies) Tj
+T*
+(valid values.) Tj
+T*
+() Tj
+T*
+(Lines 17-23: formatMoney converts values to numbers and formats invalid values as INR zero.) Tj
+T*
+() Tj
+T*
+(Lines 25-34: createElement builds an element, assigns a class, and optionally sets text) Tj
+T*
+(content.) Tj
+T*
+() Tj
+T*
+(Lines 36-45: setStatus replaces a status container with a heading and message.) Tj
+T*
+() Tj
+T*
+(Lines 47-58: apiUrlWithCurrentFilters copies current page query parameters into an API URL.) Tj
+T*
+() Tj
+T*
+(Lines 60-62: detailUrl replaces the trailing 0 in the detail URL template with the listing) Tj
+T*
+(id.) Tj
+T*
+() Tj
+T*
+(Lines 64-71: addMeta appends one dt/dd pair inside a wrapper div.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(LISTING CARDS AND LISTING API) Tj
+T*
+() Tj
+T*
+(Lines 73-117: listingCard creates one listing card with image, featured tag, location,) Tj
+T*
+(title, price, metadata, and detail link.) Tj
+T*
+() Tj
+T*
+(Lines 119-137: loadStorageStatus fetches /api/storage and updates the data source pill, or) Tj
+T*
+(shows API unavailable.) Tj
+T*
+() Tj
+T*
+(Lines 139-148: loadListings locates the listing grid/status/count elements and reads the) Tj
+T*
+(detail URL template.) Tj
+T*
+() Tj
+T*
+(Lines 149-161: fetch listing JSON using current filters, parse listings, and update count.) Tj
+T*
+() Tj
+T*
+(Lines 163-172: show an empty-state message when no listings match.) Tj
+T*
+() Tj
+T*
+(Lines 174-180: render listing cards, hide status, and show the grid.) Tj
+T*
+() Tj
+T*
+(Lines 181-193: on failure, hide the grid, set count to zero, and show an API error message.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1459 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+() Tj
+T*
+(PROPERTY DETAIL RENDERING) Tj
+T*
+() Tj
+T*
+(Lines 195-200: setPropertyText writes text into a selected element when it exists.) Tj
+T*
+() Tj
+T*
+(Lines 202-220: renderAmenities splits the amenities string by commas and renders li items.) Tj
+T*
+() Tj
+T*
+(Lines 222-229: renderProperty updates document title and hero image.) Tj
+T*
+() Tj
+T*
+(Lines 231-249: fill property type/city, title, address, price, rent, deposit, bedrooms,) Tj
+T*
+(bathrooms, area, furnishing, description, and owner fields.) Tj
+T*
+() Tj
+T*
+(Lines 250-258: show/hide the Featured tag and set the hidden listing id input.) Tj
+T*
+() Tj
+T*
+(Lines 260-266: render amenities and unhide the property content.) Tj
+T*
+() Tj
+T*
+(Lines 268-300: loadProperty fetches one listing, renders it, or shows the not-found state) Tj
+T*
+(and title on errors.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(UI BEHAVIORS) Tj
+T*
+() Tj
+T*
+(Lines 302-331: initProfileToggle opens/closes the profile popover, closes it on outside) Tj
+T*
+(click, and closes it on Escape.) Tj
+T*
+() Tj
+T*
+(Lines 333-347: initFlashDismiss auto-fades success/info flash messages after two seconds.) Tj
+T*
+() Tj
+T*
+(Lines 349-361: initAvatarFallbacks hides broken avatar images and shows initials fallback) Tj
+T*
+(text.) Tj
+T*
+() Tj
+T*
+(Lines 363-370: on DOMContentLoaded, initialize UI behaviors and start API loading for) Tj
+T*
+(whichever page is present.) Tj
+T*
+() Tj
+T*
+(Line 371: closes the IIFE.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000002424 00000 n 
+0000002550 00000 n 
+0000004060 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4186
+%%EOF

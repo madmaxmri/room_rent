@@ -1,0 +1,418 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2068 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(APP.PY LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(app.py is the main Flask application. It configures the web app, handles login/signup, phone) Tj
+T*
+(OTP verification, optional Google OAuth, protected pages, JSON APIs, inquiry submission, and) Tj
+T*
+(the 404 page.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(IMPORTS) Tj
+T*
+() Tj
+T*
+(Lines 1-5: import standard helpers for environment variables, secure random OTPs, time) Tj
+T*
+(checks, decorators, and URL parsing/building.) Tj
+T*
+() Tj
+T*
+(Lines 7-16: import Flask objects used for routes, templates, sessions, redirects, API JSON) Tj
+T*
+(responses, and flashed messages.) Tj
+T*
+() Tj
+T*
+(Line 17: imports password-hash helpers so OTP values can be stored and checked as hashes) Tj
+T*
+(instead of plain text.) Tj
+T*
+() Tj
+T*
+(Lines 19-26: import local auth helpers from auth_store.py for finding, normalizing,) Tj
+T*
+(exposing, and creating users.) Tj
+T*
+() Tj
+T*
+(Line 27: imports database helpers from db.py for environment loading, listings, inquiries,) Tj
+T*
+(and the storage label.) Tj
+T*
+() Tj
+T*
+(Lines 29-32: tries to import Authlib OAuth. If unavailable, Google sign-in is disabled) Tj
+T*
+(without breaking the app.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(APP SETUP) Tj
+T*
+() Tj
+T*
+(Line 35: loads .env values into the process before app config is read.) Tj
+T*
+() Tj
+T*
+(Line 37: creates the Flask application object.) Tj
+T*
+() Tj
+T*
+(Line 38: sets SECRET_KEY from the environment, with a development fallback.) Tj
+T*
+() Tj
+T*
+(Lines 39-41: configure session cookie behavior and default URL scheme.) Tj
+T*
+() Tj
+T*
+(Lines 44-48: _env_int safely reads an integer environment value and falls back if it is) Tj
+T*
+(missing or invalid.) Tj
+T*
+() Tj
+T*
+(Lines 51-52: configure OTP lifetime and whether local demo OTP mode is enabled.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(GOOGLE OAUTH SETUP) Tj
+T*
+() Tj
+T*
+(Lines 54-55: create the OAuth registry if Authlib is installed and initialize the Google) Tj
+T*
+(client variable.) Tj
+T*
+() Tj
+T*
+(Lines 57-70: register the Google OAuth client only when GOOGLE_CLIENT_ID and) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2123 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(GOOGLE_CLIENT_SECRET are present.) Tj
+T*
+() Tj
+T*
+(Lines 62-69: define Google's authorize/token/userinfo endpoints, issuer, signing algorithm,) Tj
+T*
+(and requested scopes.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(REQUEST HELPERS) Tj
+T*
+() Tj
+T*
+(Lines 73-80: PUBLIC_ENDPOINTS lists routes that do not require an existing login.) Tj
+T*
+() Tj
+T*
+(Lines 83-91: _filters_from_request collects search filters from query-string parameters and) Tj
+T*
+(strips whitespace.) Tj
+T*
+() Tj
+T*
+(Lines 94-95: _current_user loads the session user id and converts the full user record into) Tj
+T*
+(public-safe data.) Tj
+T*
+() Tj
+T*
+(Lines 98-101: _normalize_next_url accepts only same-site relative next URLs and otherwise) Tj
+T*
+(falls back to a named endpoint.) Tj
+T*
+() Tj
+T*
+(Lines 104-108: _safe_next resolves the next destination from form/query values or a saved) Tj
+T*
+(OAuth next URL.) Tj
+T*
+() Tj
+T*
+(Lines 111-113: _login_user clears the session and stores the authenticated user's id.) Tj
+T*
+() Tj
+T*
+(Lines 116-117: _google_enabled returns whether Google OAuth is configured.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(GOOGLE URL HELPERS) Tj
+T*
+() Tj
+T*
+(Lines 120-123: _google_redirect_uri returns GOOGLE_REDIRECT_URI or builds the callback URL) Tj
+T*
+(from Flask routing.) Tj
+T*
+() Tj
+T*
+(Lines 126-128: _google_redirect_host extracts the hostname and port from the redirect URI.) Tj
+T*
+() Tj
+T*
+(Lines 131-148: _canonical_local_url redirects 127.0.0.1:5000 to localhost:5000 when the) Tj
+T*
+(Google redirect URI expects localhost.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PHONE OTP FLOW) Tj
+T*
+() Tj
+T*
+(Lines 151-152: _generate_otp creates a zero-padded six-digit OTP.) Tj
+T*
+() Tj
+T*
+(Lines 155-159: _start_phone_otp normalizes and validates the submitted phone number.) Tj
+T*
+() Tj
+T*
+(Lines 161-167: enforce login/signup rules so login requires an account and signup rejects an) Tj
+T*
+(existing phone number.) Tj
+T*
+() Tj
+T*
+(Lines 169-174: stop phone OTP when demo mode is disabled and no SMS provider is configured.) Tj
+T*
+() Tj
+T*
+(Lines 176-184: generate the OTP and store a hashed version, phone, name, mode, expiry, and) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2077 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(next URL in the session.) Tj
+T*
+() Tj
+T*
+(Lines 186-189: store and flash the demo OTP, then redirect to the verification page.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(AUTHENTICATION GUARDS) Tj
+T*
+() Tj
+T*
+(Lines 192-203: login_required wraps protected views; API requests get 401 JSON while browser) Tj
+T*
+(pages redirect to login.) Tj
+T*
+() Tj
+T*
+(Lines 206-218: require_login runs before each request, handles localhost canonicalization,) Tj
+T*
+(allows public/API storage endpoints, and blocks unauthenticated access.) Tj
+T*
+() Tj
+T*
+(Lines 221-226: inject_auth_context makes current_user and google_oauth_enabled available to) Tj
+T*
+(every template.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(LOGIN AND SIGNUP ROUTES) Tj
+T*
+() Tj
+T*
+(Lines 229-241: /login shows the login form and starts the phone OTP login flow on POST.) Tj
+T*
+() Tj
+T*
+(Lines 244-260: /signup shows the signup form, requires a name, and starts the phone OTP) Tj
+T*
+(signup flow on POST.) Tj
+T*
+() Tj
+T*
+(Lines 263-269: /verify-otp redirects users back to login if no OTP flow is pending.) Tj
+T*
+() Tj
+T*
+(Lines 270-285: on OTP POST, reject expired codes and re-render the form when the code hash) Tj
+T*
+(does not match.) Tj
+T*
+() Tj
+T*
+(Lines 286-300: create/update the phone user, clear OTP session data, log in the user, flash) Tj
+T*
+(success, and redirect.) Tj
+T*
+() Tj
+T*
+(Lines 302-306: on GET, render the OTP form with pending data and demo OTP if available.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(GOOGLE ROUTES) Tj
+T*
+() Tj
+T*
+(Lines 309-316: /auth/google checks configuration, stores the safe next URL, and sends the) Tj
+T*
+(user to Google's OAuth screen.) Tj
+T*
+() Tj
+T*
+(Lines 319-337: /auth/google/callback validates configuration, exchanges the OAuth code for a) Tj
+T*
+(token, loads userinfo, and reports failures.) Tj
+T*
+() Tj
+T*
+(Lines 339-354: require a usable Google subject/email, upsert the local Google user, log in,) Tj
+T*
+(and redirect.) Tj
+T*
+() Tj
+T*
+(Lines 357-361: /logout clears the session, flashes a sign-out message, and returns to login.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PAGES AND APIS) Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 858 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+() Tj
+T*
+(Lines 364-368: / is the protected home page and passes current filters to index.html.) Tj
+T*
+() Tj
+T*
+(Lines 371-374: /property/<listing_id> renders the protected property detail shell.) Tj
+T*
+() Tj
+T*
+(Lines 377-379: /api/storage returns whether data is coming from demo data or MySQL.) Tj
+T*
+() Tj
+T*
+(Lines 382-387: /api/listings applies filters and returns matching listings as JSON.) Tj
+T*
+() Tj
+T*
+(Lines 390-396: /api/listings/<listing_id> returns one listing or a 404 JSON error.) Tj
+T*
+() Tj
+T*
+(Lines 399-427: /inquiry validates the form, saves or stores the inquiry, flashes the result,) Tj
+T*
+(and redirects back to the property.) Tj
+T*
+() Tj
+T*
+(Lines 430-432: render 404.html for missing pages.) Tj
+T*
+() Tj
+T*
+(Lines 435-436: run the Flask dev server when app.py is executed directly.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000210 00000 n 
+0000002329 00000 n 
+0000002455 00000 n 
+0000004629 00000 n 
+0000004755 00000 n 
+0000006883 00000 n 
+0000007009 00000 n 
+0000007918 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+8046
+%%EOF

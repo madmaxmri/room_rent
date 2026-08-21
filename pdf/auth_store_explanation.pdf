@@ -1,0 +1,333 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1844 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(AUTH_STORE.PY LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(auth_store.py is a small JSON-backed auth helper. It loads and saves users from) Tj
+T*
+(instance/users.json, normalizes phone numbers, exposes safe public user data, and creates or) Tj
+T*
+(updates phone/Google users.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(IMPORTS AND PATHS) Tj
+T*
+() Tj
+T*
+(Lines 1-5: import helpers for JSON storage, regex cleanup, UUID generation, UTC timestamps,) Tj
+T*
+(and filesystem paths.) Tj
+T*
+() Tj
+T*
+(Line 8: sets DATA_DIR to an instance folder next to auth_store.py.) Tj
+T*
+() Tj
+T*
+(Line 9: sets USERS_PATH to instance/users.json.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(TIME HELPER) Tj
+T*
+() Tj
+T*
+(Lines 12-13: _now_iso\(\) returns the current UTC time as an ISO string, with microseconds) Tj
+T*
+(removed.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(LOADING USERS) Tj
+T*
+() Tj
+T*
+(Lines 16-18: _load_users\(\) returns an empty list if users.json does not exist.) Tj
+T*
+() Tj
+T*
+(Lines 20-23: tries to read and parse the JSON file; if reading or parsing fails, returns an) Tj
+T*
+(empty list.) Tj
+T*
+() Tj
+T*
+(Lines 25-28: extracts the users list from the JSON payload, verifies it is actually a list,) Tj
+T*
+(then returns it.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(SAVING USERS) Tj
+T*
+() Tj
+T*
+(Lines 31-32: _save_users\(users\) ensures the instance directory exists.) Tj
+T*
+() Tj
+T*
+(Lines 33-36: writes {"users": users} to users.json as formatted UTF-8 JSON.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PHONE NORMALIZATION) Tj
+T*
+() Tj
+T*
+(Lines 39-42: normalize_phone\(phone\) strips the input; empty input returns an empty string.) Tj
+T*
+() Tj
+T*
+(Line 44: removes spaces, parentheses, dots, and hyphens.) Tj
+T*
+() Tj
+T*
+(Lines 45-46: converts international 00... prefix into +....) Tj
+T*
+() Tj
+T*
+(Lines 48-50: if the number starts with +, keeps only digits after it and returns +digits) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1975 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(only if there are at least 8 digits.) Tj
+T*
+() Tj
+T*
+(Lines 52-54: for a 10-digit local number, assumes India and prefixes +91.) Tj
+T*
+() Tj
+T*
+(Lines 55-57: for other numbers with at least 8 digits, prefixes +; otherwise returns an) Tj
+T*
+(empty string.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(INITIALS HELPER) Tj
+T*
+() Tj
+T*
+(Lines 60-61: _initials\(name, fallback\) splits the name into non-empty words.) Tj
+T*
+() Tj
+T*
+(Lines 62-63: for two or more name parts, returns first initial plus last initial.) Tj
+T*
+() Tj
+T*
+(Lines 64-65: for one name part, returns its first two characters.) Tj
+T*
+() Tj
+T*
+(Lines 67-68: if no name exists, uses the fallback value or U.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PUBLIC USER SHAPE) Tj
+T*
+() Tj
+T*
+(Lines 71-73: public_user\(user\) returns None if no user is provided.) Tj
+T*
+() Tj
+T*
+(Line 75: chooses a display name from name, email, phone, or User.) Tj
+T*
+() Tj
+T*
+(Line 76: chooses auth method from auth_method, provider, or defaults to phone.) Tj
+T*
+() Tj
+T*
+(Line 77: builds a readable label: Google account or Phone OTP.) Tj
+T*
+() Tj
+T*
+(Lines 79-91: returns a sanitized user dictionary for frontend/session use, including id,) Tj
+T*
+(name, contact fields, avatar, auth info, initials, verified status, and timestamps.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FIND HELPERS) Tj
+T*
+() Tj
+T*
+(Lines 94-95: find_user_by_id\(user_id\) loads users and returns the first matching id.) Tj
+T*
+() Tj
+T*
+(Lines 98-103: find_user_by_phone\(phone\) normalizes the phone first, then finds a matching) Tj
+T*
+(stored phone.) Tj
+T*
+() Tj
+T*
+(Lines 106-111: find_user_by_email\(email\) lowercases/strips email, then finds a matching) Tj
+T*
+(stored email.) Tj
+T*
+() Tj
+T*
+(Lines 114-118: find_user_by_google_sub\(google_sub\) finds a user by Google subject id.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PHONE LOGIN/CREATE) Tj
+T*
+() Tj
+T*
+(Lines 121-124: upsert_phone_user\(name, phone\) normalizes the phone, loads users, and gets) Tj
+T*
+(the current timestamp.) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1548 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+() Tj
+T*
+(Lines 126-134: if a user with that phone exists, it updates name if provided, marks auth as) Tj
+T*
+(phone, verifies the user, updates last_login_at, saves, and returns the user.) Tj
+T*
+() Tj
+T*
+(Lines 136-146: if no user exists, creates a new phone user with a UUID, name or phone) Tj
+T*
+(fallback, empty email/avatar, verified status, and timestamps.) Tj
+T*
+() Tj
+T*
+(Lines 147-149: appends the new user, saves all users, and returns it.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(GOOGLE LOGIN/CREATE) Tj
+T*
+() Tj
+T*
+(Lines 152-155: upsert_google_user\(...\) normalizes email, loads users, and gets the current) Tj
+T*
+(timestamp.) Tj
+T*
+() Tj
+T*
+(Lines 157-162: first tries to find an existing user by Google subject id.) Tj
+T*
+() Tj
+T*
+(Lines 163-167: if none was found, tries to find an existing user by email.) Tj
+T*
+() Tj
+T*
+(Lines 169-178: if an existing user is found, updates Google id, email, name, avatar, auth) Tj
+T*
+(method, verified status, and login time, then saves and returns it.) Tj
+T*
+() Tj
+T*
+(Lines 180-191: if no user exists, creates a new Google user with UUID, Google id, name/email) Tj
+T*
+(fallback, empty phone, avatar, verified status, and timestamps.) Tj
+T*
+() Tj
+T*
+(Lines 192-194: appends the new user, saves all users, and returns it.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(IMPORTANT DETAIL) Tj
+T*
+() Tj
+T*
+(This file uses a simple JSON file as the user store. That is fine for a small/demo app, but) Tj
+T*
+(it has no locking, indexing, or database-level protection for concurrent writes.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000203 00000 n 
+0000002098 00000 n 
+0000002224 00000 n 
+0000004250 00000 n 
+0000004376 00000 n 
+0000005975 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6101
+%%EOF

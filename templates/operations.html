@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Operations - RoomRent{% endblock %}
+
+{% block content %}
+  <section
+    class="ops-shell"
+    data-operations-dashboard
+    data-api-url="{{ url_for('api_operations_dashboard') }}"
+  >
+    <div class="ops-heading">
+      <div>
+        <p class="eyebrow">Operations</p>
+        <h1>User activity dashboard</h1>
+      </div>
+      <span class="ops-updated" data-ops-updated>Loading</span>
+    </div>
+
+    <section class="ops-metrics" aria-label="User activity metrics">
+      <div>
+        <span>Total users</span>
+        <strong data-ops-stat="total_users">0</strong>
+      </div>
+      <div>
+        <span>New today</span>
+        <strong data-ops-stat="new_today">0</strong>
+      </div>
+      <div>
+        <span>New in 7 days</span>
+        <strong data-ops-stat="new_last_7_days">0</strong>
+      </div>
+      <div>
+        <span>Footprints</span>
+        <strong data-ops-stat="tracked_footprints">0</strong>
+      </div>
+    </section>
+
+    <section class="ops-layout">
+      <article class="ops-panel">
+        <div class="ops-panel-head">
+          <div>
+            <p class="eyebrow">New user add</p>
+            <h2>Recent users</h2>
+          </div>
+          <span data-ops-storage>API data</span>
+        </div>
+
+        <div class="ops-table-wrap">
+          <table class="ops-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Contact</th>
+                <th>Method</th>
+                <th>Created</th>
+                <th>Last login</th>
+                <th>Footprints</th>
+                <th>Last footprint</th>
+              </tr>
+            </thead>
+            <tbody data-ops-users>
+              <tr>
+                <td colspan="7">Loading users...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="ops-panel">
+        <div class="ops-panel-head">
+          <div>
+            <p class="eyebrow">Footprint</p>
+            <h2>Recent activity</h2>
+          </div>
+          <span data-ops-active>0 active</span>
+        </div>
+
+        <div class="ops-table-wrap">
+          <table class="ops-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>User</th>
+                <th>Event</th>
+                <th>Page</th>
+                <th>Device / IP</th>
+              </tr>
+            </thead>
+            <tbody data-ops-footprints>
+              <tr>
+                <td colspan="5">Loading footprints...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <section class="empty-page" data-operations-error hidden>
+    <h1>Dashboard unavailable</h1>
+    <p>The operations API could not be loaded.</p>
+    <a class="button-secondary" href="{{ site_home_url }}">Back to listings</a>
+  </section>
+{% endblock %}

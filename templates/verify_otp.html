@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Verify OTP - RoomRent{% endblock %}
+
+{% block content %}
+  <section class="auth-page auth-page-compact">
+    <div class="auth-panel">
+      <p class="eyebrow">OTP verification</p>
+      <h1>Enter the code</h1>
+      <p class="auth-muted">Sent to {{ pending_otp.phone }}.</p>
+
+      {% if demo_otp %}
+        <div class="otp-demo">
+          <span>Demo OTP</span>
+          <strong>{{ demo_otp }}</strong>
+        </div>
+      {% endif %}
+
+      <form method="post" class="auth-form">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <label>
+          <span>6-digit OTP</span>
+          <input type="text" name="otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required>
+        </label>
+        <button type="submit">Verify and continue</button>
+      </form>
+
+      <p class="auth-switch">
+        Wrong phone number?
+        <a href="{{ url_for('login') }}">Start again</a>
+      </p>
+    </div>
+  </section>
+{% endblock %}

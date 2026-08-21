@@ -1,0 +1,319 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2043 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(STATIC/CSS/STYLES.CSS LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(styles.css contains the full visual system for the app: color variables, layout, auth pages,) Tj
+T*
+(hero/search UI, listing cards, property detail page, profile menu, flash messages, footer,) Tj
+T*
+(and responsive rules.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(BASE THEME AND RESETS) Tj
+T*
+() Tj
+T*
+(Lines 1-12: define CSS custom properties for text, muted text, borders, backgrounds, accent) Tj
+T*
+(colors, and shadows.) Tj
+T*
+() Tj
+T*
+(Lines 14-20: set border-box sizing globally and smooth scrolling on the html element.) Tj
+T*
+() Tj
+T*
+(Lines 22-28: define body margin, colors, background, font stack, and line height.) Tj
+T*
+() Tj
+T*
+(Lines 30-45: normalize links, images, and form controls.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(HEADER, PROFILE, NAVIGATION) Tj
+T*
+() Tj
+T*
+(Lines 47-59: make the site header sticky with flex layout, spacing, translucent background,) Tj
+T*
+(border, and blur.) Tj
+T*
+() Tj
+T*
+(Lines 61-79: style the profile menu trigger as a compact teal avatar button.) Tj
+T*
+() Tj
+T*
+(Lines 81-95: style hover/open states and size avatar image/initials content.) Tj
+T*
+() Tj
+T*
+(Lines 97-120: position and animate the profile popover, including hidden state behavior.) Tj
+T*
+() Tj
+T*
+(Lines 122-138: style the RoomRent brand and R brand mark.) Tj
+T*
+() Tj
+T*
+(Lines 140-151: style the main nav links and hover color.) Tj
+T*
+() Tj
+T*
+(Lines 153-165: style the data source pill shown in the header.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FLASH AND AUTH PAGES) Tj
+T*
+() Tj
+T*
+(Lines 167-200: position flash messages, style their default/error/info states, and define) Tj
+T*
+(dismiss animation.) Tj
+T*
+() Tj
+T*
+(Lines 202-216: define the two-column auth layout and compact OTP layout.) Tj
+T*
+() Tj
+T*
+(Lines 218-229: size and space the auth panel and h1.) Tj
+T*
+() Tj
+T*
+(Lines 231-269: style auth forms, dividers, Google button, notes, muted text, and switch) Tj
+T*
+(links.) Tj
+T*
+() Tj
+T*
+(Lines 271-276: set the auth visual background image and overlay.) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1953 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+() Tj
+T*
+(Lines 278-300: style the demo OTP box and prominent OTP value.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(HOME HERO AND FORM CONTROLS) Tj
+T*
+() Tj
+T*
+(Lines 302-315: create the home hero background image, overlay gradient, spacing, and height.) Tj
+T*
+() Tj
+T*
+(Lines 317-350: style hero copy, eyebrow labels, hero/detail/empty page h1s, and hero) Tj
+T*
+(paragraph text.) Tj
+T*
+() Tj
+T*
+(Lines 352-362: create the search panel grid with responsive widths, white background,) Tj
+T*
+(border, radius, and shadow.) Tj
+T*
+() Tj
+T*
+(Lines 364-400: style labels, inputs, selects, textareas, dimensions, padding, and focus) Tj
+T*
+(states.) Tj
+T*
+() Tj
+T*
+(Lines 402-433: style primary buttons and secondary buttons, including hover states.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(HOME CONTENT AND PROFILE DETAILS) Tj
+T*
+() Tj
+T*
+(Lines 435-461: style the three-column stats strip and its typography.) Tj
+T*
+() Tj
+T*
+(Lines 463-489: define shared section widths, spacing, section headings, and text links.) Tj
+T*
+() Tj
+T*
+(Lines 490-504: constrain the home shell and set home listing grid columns.) Tj
+T*
+() Tj
+T*
+(Lines 506-568: style profile popover inner layout, avatar frame, profile heading, profile) Tj
+T*
+(list, and wrapping behavior.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(LISTING CARDS AND EMPTY STATES) Tj
+T*
+() Tj
+T*
+(Lines 570-582: create the listing grid and card shell.) Tj
+T*
+() Tj
+T*
+(Lines 584-601: style listing images with aspect ratio, object fit, and hover zoom.) Tj
+T*
+() Tj
+T*
+(Lines 603-618: style featured tags and static tags.) Tj
+T*
+() Tj
+T*
+(Lines 620-653: style listing body, location, title height, and price text.) Tj
+T*
+() Tj
+T*
+(Lines 655-688: style metadata/detail grids and dt/dd typography.) Tj
+T*
+() Tj
+T*
+(Lines 690-706: style empty listing and empty page text states.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PROPERTY DETAIL PAGE) Tj
+T*
+() Tj
+T*
+(Lines 708-729: create the property detail hero with full-cover image and dark gradient) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1106 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(overlay.) Tj
+T*
+() Tj
+T*
+(Lines 731-759: position and style detail summary text and price over the hero image.) Tj
+T*
+() Tj
+T*
+(Lines 761-778: define two-column detail layout and shared property/inquiry panel styling.) Tj
+T*
+() Tj
+T*
+(Lines 780-810: style property headings, description text, detail grid, and amenities pills.) Tj
+T*
+() Tj
+T*
+(Lines 812-832: style the sticky inquiry panel, owner line, and inquiry form.) Tj
+T*
+() Tj
+T*
+(Lines 834-839: style the generic empty page layout.) Tj
+T*
+() Tj
+T*
+(Lines 841-855: style the footer and footer text.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(RESPONSIVE RULES) Tj
+T*
+() Tj
+T*
+(Lines 857-885: at max-width 1040px, reduce search/listing columns and make detail layout one) Tj
+T*
+(column.) Tj
+T*
+() Tj
+T*
+(Lines 887-964: at max-width 700px, wrap the header, reorder header items, simplify grids,) Tj
+T*
+(resize hero headings, stack footer/auth layout, and move auth visual above the form.) Tj
+T*
+() Tj
+T*
+(Lines 966-974: at max-width 420px, stack metadata cells and lower flash messages below the) Tj
+T*
+(wrapped header.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000203 00000 n 
+0000002297 00000 n 
+0000002423 00000 n 
+0000004427 00000 n 
+0000004553 00000 n 
+0000005710 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5836
+%%EOF

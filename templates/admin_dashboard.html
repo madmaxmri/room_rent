@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard - RoomRent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+  </head>
+  <body
+    class="admin-body"
+    data-admin-dashboard
+    data-api-url="{{ dashboard_api_url }}"
+    data-analytics-url="{{ analytics_api_url }}"
+    data-storage-url="{{ storage_api_url }}"
+  >
+    <header class="admin-header">
+      <a class="admin-brand" href="{{ url_for('admin_dashboard') }}" aria-label="RoomRent admin dashboard">
+        <span>RA</span>
+        <strong>RoomRent Admin</strong>
+      </a>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="{{ mfa_setup_url }}">MFA</a>
+        <a href="{{ url_for('admin_logout') }}">Logout</a>
+      </nav>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="admin-flash-stack" aria-live="polite">
+          {% for category, message in messages %}
+            <p class="admin-flash admin-flash-{{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <p class="admin-eyebrow">Admin control</p>
+          <h1>User and footprint monitor</h1>
+        </div>
+        <div class="admin-session-card">
+          <span>{{ current_admin.auth_label }}</span>
+          <strong>{{ current_admin.name }}</strong>
+          <small data-admin-storage>
+            {% if current_admin.mfa_enabled %}MFA enabled{% else %}MFA not enabled{% endif %}
+          </small>
+        </div>
+      </section>
+
+      <section class="admin-metrics" aria-label="Admin metrics">
+        <article>
+          <span>Total users</span>
+          <strong data-admin-stat="total_users">0</strong>
+        </article>
+        <article>
+          <span>New today</span>
+          <strong data-admin-stat="new_today">0</strong>
+        </article>
+        <article>
+          <span>New in 7 days</span>
+          <strong data-admin-stat="new_last_7_days">0</strong>
+        </article>
+        <article>
+          <span>Footprints</span>
+          <strong data-admin-stat="tracked_footprints">0</strong>
+        </article>
+      </section>
+
+      <section class="admin-panel admin-analytics-panel" aria-label="Rental analytics">
+        <div class="admin-panel-head">
+          <div>
+            <p class="admin-eyebrow">Database analysis</p>
+            <h2>Rental market analytics</h2>
+          </div>
+          <span data-admin-analytics-updated>Loading</span>
+        </div>
+
+        <div class="admin-analytics-body">
+          <div class="admin-analytics-summary" aria-label="Listing analytics summary">
+            <article>
+              <span>Listings</span>
+              <strong data-admin-analytics-stat="listing_count">0</strong>
+            </article>
+            <article>
+              <span>Available</span>
+              <strong data-admin-analytics-stat="available_count">0</strong>
+            </article>
+            <article>
+              <span>Average rent</span>
+              <strong data-admin-analytics-stat="average_rent">₹0</strong>
+            </article>
+            <article>
+              <span>User footprints</span>
+              <strong data-admin-analytics-stat="footprint_count">0</strong>
+            </article>
+          </div>
+
+          <div class="admin-chart-grid" data-admin-charts>
+            <article class="admin-chart-card">
+              <div class="admin-chart-placeholder">Loading analytics...</div>
+            </article>
+          </div>
+
+          <div class="admin-top-cities" aria-label="Top cities by listings">
+            <h3>Top cities</h3>
+            <div data-admin-top-cities>
+              <p>Loading city data...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-panels">
+        <article class="admin-panel">
+          <div class="admin-panel-head">
+            <div>
+              <p class="admin-eyebrow">New user add</p>
+              <h2>Recent users</h2>
+            </div>
+            <span data-admin-updated>Loading</span>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Contact</th>
+                  <th>Login method</th>
+                  <th>Created</th>
+                  <th>Last login</th>
+                  <th>Footprints</th>
+                  <th>Last footprint</th>
+                </tr>
+              </thead>
+              <tbody data-admin-users>
+                <tr>
+                  <td colspan="7">Loading users...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="admin-panel">
+          <div class="admin-panel-head">
+            <div>
+              <p class="admin-eyebrow">Footprint trail</p>
+              <h2>Recent activity</h2>
+            </div>
+            <span data-admin-active>0 active</span>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>User</th>
+                  <th>Event</th>
+                  <th>Page</th>
+                  <th>Device / IP</th>
+                </tr>
+              </thead>
+              <tbody data-admin-footprints>
+                <tr>
+                  <td colspan="5">Loading footprints...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}" defer></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - RoomRent{% endblock %}
+
+{% block content %}
+  <section class="auth-page">
+    <div class="auth-panel">
+      <p class="eyebrow">Sign up</p>
+      <h1>Create your account</h1>
+
+      <form method="post" class="auth-form">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="next" value="{{ next_url }}">
+        <label>
+          <span>Full name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Phone number</span>
+          <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+        </label>
+        <button type="submit">Verify phone</button>
+      </form>
+
+      <div class="auth-divider"><span>or</span></div>
+
+      {% if google_oauth_enabled %}
+        <a class="button-secondary auth-google" href="{{ url_for('google_login', next=next_url) }}">Continue with Google</a>
+      {% else %}
+        <p class="auth-note">Google sign-in needs OAuth credentials in `.env`.</p>
+      {% endif %}
+
+      <p class="auth-switch">
+        Already have an account?
+        <a href="{{ url_for('login', next=next_url) }}">Log in</a>
+      </p>
+    </div>
+    <div class="auth-visual" aria-hidden="true"></div>
+  </section>
+{% endblock %}

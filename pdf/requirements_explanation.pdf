@@ -1,0 +1,75 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 735 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(REQUIREMENTS.TXT LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(requirements.txt pins the Python packages needed to run the Flask app.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(DEPENDENCIES) Tj
+T*
+() Tj
+T*
+(Line 1: Flask 3.0.3 is the web framework used by app.py.) Tj
+T*
+() Tj
+T*
+(Line 2: Authlib 1.3.2 provides optional Google OAuth support.) Tj
+T*
+() Tj
+T*
+(Line 3: mysql-connector-python 9.0.0 allows db.py to connect to MySQL.) Tj
+T*
+() Tj
+T*
+(Line 4: python-dotenv 1.0.1 is listed for .env support, although this project also has its) Tj
+T*
+(own load_env helper.) Tj
+T*
+() Tj
+T*
+(Line 5: requests 2.32.5 is an HTTP library commonly used by OAuth/client integrations and) Tj
+T*
+(may be used indirectly.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000976 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1102
+%%EOF

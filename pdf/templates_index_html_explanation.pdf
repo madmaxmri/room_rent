@@ -1,0 +1,129 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1660 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(TEMPLATES/INDEX.HTML LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(index.html is the protected home/search page. It renders the search controls and empty) Tj
+T*
+(containers that app.js fills with listing data from the API.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(TEMPLATE SETUP) Tj
+T*
+() Tj
+T*
+(Line 1: extends base.html so it inherits the shared layout.) Tj
+T*
+() Tj
+T*
+(Line 3: sets the page title block.) Tj
+T*
+() Tj
+T*
+(Line 5: starts the content block.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(HERO AND SEARCH) Tj
+T*
+() Tj
+T*
+(Lines 6-12: render the hero section text.) Tj
+T*
+() Tj
+T*
+(Lines 14-18: open the GET search form and location input, preserving filters.city.) Tj
+T*
+() Tj
+T*
+(Lines 19-27: property type select with Apartment, Studio, Villa, and Shared Room options.) Tj
+T*
+() Tj
+T*
+(Lines 28-36: furnishing select with Fully furnished, Semi furnished, and Unfurnished) Tj
+T*
+(options.) Tj
+T*
+() Tj
+T*
+(Lines 37-44: min and max rent number fields with preserved filter values.) Tj
+T*
+() Tj
+T*
+(Lines 45-53: bedroom select with 1+ through 4+ options.) Tj
+T*
+() Tj
+T*
+(Lines 54-57: submit button and hero closing tags.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(STATS AND LISTING SHELL) Tj
+T*
+() Tj
+T*
+(Lines 59-72: render a stats strip; JavaScript updates the matching homes count.) Tj
+T*
+() Tj
+T*
+(Lines 74-82: open the listing section and add a Clear filters link.) Tj
+T*
+() Tj
+T*
+(Lines 84-87: provide an initial loading/empty state for listings.) Tj
+T*
+() Tj
+T*
+(Lines 89-95: create the hidden listing grid with API and detail URL data attributes used by) Tj
+T*
+(app.js.) Tj
+T*
+() Tj
+T*
+(Lines 96-98: close the listing shell and content block.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000001902 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2028
+%%EOF

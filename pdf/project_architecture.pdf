@@ -1,0 +1,325 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2138 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(ROOMRENT PROJECT ARCHITECTURE) Tj
+T*
+() Tj
+T*
+(RoomRent is a Flask web app for browsing rental listings behind login-protected pages. It) Tj
+T*
+(combines server-rendered Jinja templates with client-side JavaScript that fetches JSON APIs) Tj
+T*
+(and fills listing/property views.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(TOP-LEVEL STRUCTURE) Tj
+T*
+() Tj
+T*
+(app.py: Flask application, routes, authentication flow, API endpoints, inquiry form, and app) Tj
+T*
+(startup.) Tj
+T*
+() Tj
+T*
+(auth_store.py: local JSON-backed user storage for phone OTP users and Google OAuth profiles.) Tj
+T*
+() Tj
+T*
+(db.py: data access layer for MySQL with a demo-data fallback.) Tj
+T*
+() Tj
+T*
+(templates/: Jinja HTML templates for shared layout, home, auth pages, property detail, and) Tj
+T*
+(404.) Tj
+T*
+() Tj
+T*
+(static/css/styles.css: all styling and responsive layout rules.) Tj
+T*
+() Tj
+T*
+(static/js/app.js: browser-side API loading, rendering, and small UI behaviors.) Tj
+T*
+() Tj
+T*
+(.env: local runtime configuration and secrets, ignored by Git.) Tj
+T*
+() Tj
+T*
+(instance/users.json: runtime user data created by auth_store.py, ignored by Git.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(RUNTIME DIAGRAM) Tj
+T*
+() Tj
+T*
+(Browser -> Flask routes in app.py -> Jinja templates in templates/ -> CSS/JS from static/.) Tj
+T*
+() Tj
+T*
+(Browser JavaScript -> /api/storage, /api/listings, /api/listings/<id> -> app.py -> db.py ->) Tj
+T*
+(MySQL or SAMPLE_LISTINGS.) Tj
+T*
+() Tj
+T*
+(Auth routes in app.py -> auth_store.py -> instance/users.json.) Tj
+T*
+() Tj
+T*
+(Inquiry form -> /inquiry -> db.py -> MySQL inquiries table or DEMO_INQUIRIES memory list.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(AUTHENTICATION ARCHITECTURE) Tj
+T*
+() Tj
+T*
+(Phone login/signup starts in /login or /signup and calls _start_phone_otp.) Tj
+T*
+() Tj
+T*
+(The OTP is generated in app.py, hashed with Werkzeug, and stored in the Flask session with) Tj
+T*
+(an expiry timestamp.) Tj
+T*
+() Tj
+T*
+(In local demo mode, the OTP is also flashed/shown to the user instead of being sent by SMS.) Tj
+T*
+() Tj
+T*
+(/verify-otp checks expiry and hash, then creates or updates the user through auth_store.py.) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2010 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+() Tj
+T*
+(Google sign-in is optional. If Authlib and Google credentials exist, /auth/google and) Tj
+T*
+(/auth/google/callback handle OAuth and upsert a Google user.) Tj
+T*
+() Tj
+T*
+(After successful auth, app.py stores user_id in the session and templates receive) Tj
+T*
+(current_user from the context processor.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(DATA ARCHITECTURE) Tj
+T*
+() Tj
+T*
+(db.py first tries MySQL when MYSQL_* or DB_* configuration is present and mysql.connector is) Tj
+T*
+(installed.) Tj
+T*
+() Tj
+T*
+(If MySQL is unavailable, listing search and detail pages use SAMPLE_LISTINGS from db.py.) Tj
+T*
+() Tj
+T*
+(Listing APIs return JSON. app.js renders listing cards and property details in the browser.) Tj
+T*
+() Tj
+T*
+(Inquiries are inserted into a MySQL inquiries table when possible. In demo mode they are) Tj
+T*
+(appended to DEMO_INQUIRIES and are not persistent.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FRONTEND ARCHITECTURE) Tj
+T*
+() Tj
+T*
+(base.html provides the shared shell: header, profile popover, nav, flash messages, main) Tj
+T*
+(block, footer, CSS, and JS.) Tj
+T*
+() Tj
+T*
+(index.html provides the search form and an initially hidden listing grid. app.js loads) Tj
+T*
+(/api/listings and renders cards.) Tj
+T*
+() Tj
+T*
+(property.html provides data-* placeholders. app.js loads /api/listings/<id> and fills the) Tj
+T*
+(hero, details, amenities, and inquiry form.) Tj
+T*
+() Tj
+T*
+(login.html, signup.html, and verify_otp.html are server-rendered auth forms.) Tj
+T*
+() Tj
+T*
+(styles.css owns all page layouts and responsive behavior. app.js owns dynamic data rendering) Tj
+T*
+(and lightweight interaction.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(ROUTE MAP) Tj
+T*
+() Tj
+T*
+(GET/POST /login: phone login form and OTP start.) Tj
+T*
+() Tj
+T*
+(GET/POST /signup: phone signup form and OTP start.) Tj
+T*
+() Tj
+T*
+(GET/POST /verify-otp: OTP verification and user login.) Tj
+T*
+() Tj
+T*
+(GET /auth/google: start Google OAuth.) Tj
+T*
+() Tj
+T*
+(GET /auth/google/callback: finish Google OAuth.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1085 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(GET /logout: clear session.) Tj
+T*
+() Tj
+T*
+(GET /: protected home/search page.) Tj
+T*
+() Tj
+T*
+(GET /property/<listing_id>: protected property detail shell.) Tj
+T*
+() Tj
+T*
+(GET /api/storage: current data source label.) Tj
+T*
+() Tj
+T*
+(GET /api/listings: filtered listing JSON.) Tj
+T*
+() Tj
+T*
+(GET /api/listings/<listing_id>: single listing JSON.) Tj
+T*
+() Tj
+T*
+(POST /inquiry: save or demo-store owner inquiry.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(IMPORTANT LIMITS) Tj
+T*
+() Tj
+T*
+(auth_store.py uses a JSON file and has no locking, so it is best for demos or low-) Tj
+T*
+(concurrency local use.) Tj
+T*
+() Tj
+T*
+(Phone OTP production delivery is not implemented; OTP_DEMO_MODE=0 requires adding an SMS) Tj
+T*
+(provider integration first.) Tj
+T*
+() Tj
+T*
+(MySQL errors silently fall back to demo data in several paths, which is convenient locally) Tj
+T*
+(but can hide production database problems.) Tj
+T*
+() Tj
+T*
+(.env contains secrets and should stay ignored by Git. Rotate credentials if they have been) Tj
+T*
+(exposed outside your machine.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000203 00000 n 
+0000002392 00000 n 
+0000002518 00000 n 
+0000004579 00000 n 
+0000004705 00000 n 
+0000005841 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5967
+%%EOF

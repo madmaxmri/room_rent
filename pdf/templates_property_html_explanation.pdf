@@ -1,0 +1,160 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1760 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(TEMPLATES/PROPERTY.HTML LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(property.html is the protected property detail page shell. JavaScript fetches the listing) Tj
+T*
+(JSON and fills the data-* placeholders.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(TEMPLATE SETUP AND HERO) Tj
+T*
+() Tj
+T*
+(Line 1: extends base.html.) Tj
+T*
+() Tj
+T*
+(Line 3: sets the title before JavaScript replaces it with the property name.) Tj
+T*
+() Tj
+T*
+(Line 5: starts the content block.) Tj
+T*
+() Tj
+T*
+(Lines 6-10: open the detail hero and store the listing detail API URL in data-api-url.) Tj
+T*
+() Tj
+T*
+(Lines 11-17: define placeholders for image, type/city, title, address, and price.) Tj
+T*
+() Tj
+T*
+(Line 18: closes the hero.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(DETAILS PANEL) Tj
+T*
+() Tj
+T*
+(Lines 20-21: open the hidden detail layout and property panel.) Tj
+T*
+() Tj
+T*
+(Lines 22-28: render the section heading and hidden Featured tag.) Tj
+T*
+() Tj
+T*
+(Lines 30-55: define rent, deposit, bedrooms, bathrooms, area, and furnishing placeholders.) Tj
+T*
+() Tj
+T*
+(Lines 57-61: define description and amenity placeholders.) Tj
+T*
+() Tj
+T*
+(Line 62: closes the property panel.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(INQUIRY PANEL) Tj
+T*
+() Tj
+T*
+(Lines 64-67: open the owner contact panel and inquiry form.) Tj
+T*
+() Tj
+T*
+(Line 68: include listing_id as a hidden input, also updated by JavaScript.) Tj
+T*
+() Tj
+T*
+(Lines 69-80: prefill name, email, and phone from current_user.) Tj
+T*
+() Tj
+T*
+(Lines 81-85: provide a default inquiry message and submit button.) Tj
+T*
+() Tj
+T*
+(Lines 86-88: close the form, panel, and detail layout.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(NOT FOUND STATE) Tj
+T*
+() Tj
+T*
+(Lines 90-94: hidden fallback shown by JavaScript when the listing API returns an error or) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 104 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(404.) Tj
+T*
+() Tj
+T*
+(Line 95: ends the content block.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000002008 00000 n 
+0000002134 00000 n 
+0000002288 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+2414
+%%EOF

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Property Not Found - RoomRent{% endblock %}
+
+{% block content %}
+  <section class="empty-page">
+    <h1>Property not found</h1>
+    <p>The listing may have been removed or is no longer available.</p>
+    <a class="button-secondary" href="{{ url_for('home') }}">Back to listings</a>
+  </section>
+{% endblock %}

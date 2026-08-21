@@ -1,0 +1,176 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1742 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(README.MD LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(README.md documents what the project is, how to run it, what files matter, how auth works,) Tj
+T*
+(and which API routes exist.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(PROJECT INTRO) Tj
+T*
+() Tj
+T*
+(Line 1: project title, RoomRent.) Tj
+T*
+() Tj
+T*
+(Line 3: describes the app as a small Flask rental listing app with protected pages and JSON) Tj
+T*
+(API driven listings.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(RUN INSTRUCTIONS) Tj
+T*
+() Tj
+T*
+(Line 5: starts the Run section.) Tj
+T*
+() Tj
+T*
+(Line 7: tells the user to run commands from the project folder.) Tj
+T*
+() Tj
+T*
+(Lines 9-12: PowerShell snippet to activate the virtual environment and run python app.py.) Tj
+T*
+() Tj
+T*
+(Line 14: tells the user to open http://127.0.0.1:5000.) Tj
+T*
+() Tj
+T*
+(Line 16: notes that VS Code can run the configured Flask task.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FILE MAP) Tj
+T*
+() Tj
+T*
+(Line 18: starts the Files section.) Tj
+T*
+() Tj
+T*
+(Lines 20-27: briefly explains app.py, auth_store.py, db.py, templates, CSS, JavaScript, and) Tj
+T*
+(.env.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(AUTH NOTES) Tj
+T*
+() Tj
+T*
+(Line 28: starts the Auth section.) Tj
+T*
+() Tj
+T*
+(Line 30: explains local phone OTP demo mode and notes that production needs an SMS provider) Tj
+T*
+(before disabling demo mode.) Tj
+T*
+() Tj
+T*
+(Lines 32-38: list Google OAuth environment variables needed for Google sign-in.) Tj
+T*
+() Tj
+T*
+(Lines 40-44: show the redirect URI that must be configured in Google Cloud.) Tj
+T*
+() Tj
+T*
+(Line 46: warns that localhost and 127.0.0.1 are different redirect URI hosts for Google) Tj
+T*
+(OAuth.) Tj
+T*
+() Tj
+T*
+(Line 48: notes that local user records are stored in instance/users.json and ignored by Git.) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 321 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+() Tj
+T*
+() Tj
+T*
+(API NOTES) Tj
+T*
+() Tj
+T*
+(Line 50: starts the API section.) Tj
+T*
+() Tj
+T*
+(Line 52: documents GET /api/storage.) Tj
+T*
+() Tj
+T*
+(Line 53: documents GET /api/listings and its optional filters.) Tj
+T*
+() Tj
+T*
+(Line 54: documents GET /api/listings/<id>.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000001990 00000 n 
+0000002116 00000 n 
+0000002487 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+2613
+%%EOF

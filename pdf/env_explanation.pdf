@@ -1,0 +1,135 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1818 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(.ENV LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(.env stores local runtime settings. Secret values are intentionally redacted in this) Tj
+T*
+(explanation PDF.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(FLASK SETTINGS) Tj
+T*
+() Tj
+T*
+(Line 1: comment marking the Flask configuration section.) Tj
+T*
+() Tj
+T*
+(Line 2: SECRET_KEY configures Flask session signing. The actual value is redacted.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(MYSQL SETTINGS) Tj
+T*
+() Tj
+T*
+(Line 4: comment marking the local MySQL Workbench connection section.) Tj
+T*
+() Tj
+T*
+(Line 5: MYSQL_HOST defines the database host. Value redacted.) Tj
+T*
+() Tj
+T*
+(Line 6: MYSQL_PORT defines the database port. Value redacted.) Tj
+T*
+() Tj
+T*
+(Line 7: MYSQL_USER defines the database username. Value redacted.) Tj
+T*
+() Tj
+T*
+(Line 8: MYSQL_PASSWORD defines the database password. Value redacted.) Tj
+T*
+() Tj
+T*
+(Line 9: MYSQL_DATABASE defines the database/schema name. Value redacted.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(AUTH SETTINGS) Tj
+T*
+() Tj
+T*
+(Line 11: comment marking the authentication configuration section.) Tj
+T*
+() Tj
+T*
+(Line 12: OTP_DEMO_MODE controls whether the app shows demo OTPs instead of sending SMS.) Tj
+T*
+() Tj
+T*
+(Line 13: OTP_TTL_SECONDS controls how long a generated OTP remains valid.) Tj
+T*
+() Tj
+T*
+(Line 14: GOOGLE_CLIENT_ID identifies the Google OAuth client. Value redacted.) Tj
+T*
+() Tj
+T*
+(Line 15: GOOGLE_CLIENT_SECRET authenticates the Google OAuth client. Value redacted.) Tj
+T*
+() Tj
+T*
+(Line 16: GOOGLE_REDIRECT_URI tells Google where to send users after OAuth approval. Value) Tj
+T*
+(redacted.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(SECURITY NOTE) Tj
+T*
+() Tj
+T*
+(This file is correctly ignored by .gitignore. Do not commit it, and rotate credentials if) Tj
+T*
+(they have been shared outside your local environment.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000002060 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2186
+%%EOF

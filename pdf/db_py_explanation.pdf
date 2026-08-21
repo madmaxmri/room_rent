@@ -1,0 +1,295 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1917 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(DB.PY LINE-BY-LINE EXPLANATION) Tj
+T*
+() Tj
+T*
+(db.py is the data access layer. It can use MySQL when configured, but falls back to built-in) Tj
+T*
+(sample listings and in-memory demo inquiries when MySQL is unavailable.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(IMPORTS AND OPTIONAL MYSQL) Tj
+T*
+() Tj
+T*
+(Lines 1-3: import environment access, a context helper for closing connections, and pathlib) Tj
+T*
+(for .env loading.) Tj
+T*
+() Tj
+T*
+(Lines 5-10: try to import mysql.connector. If it fails, set mysql to None and make) Tj
+T*
+(MySQLError a generic Exception fallback.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(DEMO DATA) Tj
+T*
+() Tj
+T*
+(Lines 13-98: SAMPLE_LISTINGS defines four built-in rental listings used when MySQL is not) Tj
+T*
+(available.) Tj
+T*
+() Tj
+T*
+(Lines 14-34: first listing, a featured 2BHK apartment in Bengaluru.) Tj
+T*
+() Tj
+T*
+(Lines 35-55: second listing, a furnished studio in Pune.) Tj
+T*
+() Tj
+T*
+(Lines 56-76: third listing, a featured villa in Hyderabad.) Tj
+T*
+() Tj
+T*
+(Lines 77-98: fourth listing, a shared room in Delhi.) Tj
+T*
+() Tj
+T*
+(Line 100: DEMO_INQUIRIES stores submitted inquiries in memory during demo mode.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(SHARED CONSTANTS) Tj
+T*
+() Tj
+T*
+(Lines 102-107: LISTING_COLUMNS holds the column list used by MySQL SELECT queries.) Tj
+T*
+() Tj
+T*
+(Line 109: BOOLEAN_FIELDS lists fields that should be converted to Python bool values after) Tj
+T*
+(database reads.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(ENVIRONMENT AND CONNECTION) Tj
+T*
+() Tj
+T*
+(Lines 112-125: load_env reads key=value pairs from .env, skips blank/comment lines, and sets) Tj
+T*
+(missing environment variables.) Tj
+T*
+() Tj
+T*
+(Lines 127-129: _mysql_configured checks whether any MySQL-related environment switch/user is) Tj
+T*
+(present.) Tj
+T*
+() Tj
+T*
+(Lines 131-143: _db_config builds the host, port, user, password, and database config from) Tj
+T*
+(MYSQL_* or DB_* variables.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1985 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(Lines 146-152: _connect returns None when MySQL is unavailable/unconfigured or when the) Tj
+T*
+(connection attempt fails.) Tj
+T*
+() Tj
+T*
+(Lines 155-160: storage_label returns Demo data or MySQL so the UI can show the active) Tj
+T*
+(source.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(NORMALIZATION HELPERS) Tj
+T*
+() Tj
+T*
+(Lines 163-170: _clean_int converts filter values to integers, returning None for missing or) Tj
+T*
+(invalid input.) Tj
+T*
+() Tj
+T*
+(Lines 172-180: _normalize_listing copies a DB row to a dict and converts) Tj
+T*
+(is_featured/is_available to booleans.) Tj
+T*
+() Tj
+T*
+(Lines 183-186: _sample_listing returns a copy of a sample listing so callers do not mutate) Tj
+T*
+(the original data.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(SEARCH LISTINGS) Tj
+T*
+() Tj
+T*
+(Lines 189-193: search_listings opens a connection and falls back to sample search when no) Tj
+T*
+(connection exists.) Tj
+T*
+() Tj
+T*
+(Lines 194-199: builds the base MySQL query for available listings and initializes query) Tj
+T*
+(parameters.) Tj
+T*
+() Tj
+T*
+(Lines 201-206: read and normalize filters for city, type, furnishing, price range, and) Tj
+T*
+(bedrooms.) Tj
+T*
+() Tj
+T*
+(Lines 208-225: append WHERE clauses only for filters the user supplied, using parameterized) Tj
+T*
+(values.) Tj
+T*
+() Tj
+T*
+(Line 227: order results with featured listings first, then lower monthly rent first.) Tj
+T*
+() Tj
+T*
+(Lines 229-238: execute the query, normalize rows, fallback to sample data on MySQL errors,) Tj
+T*
+(and close the cursor.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(SINGLE LISTING AND INQUIRY) Tj
+T*
+() Tj
+T*
+(Lines 240-245: get_listing falls back to matching SAMPLE_LISTINGS by id when no MySQL) Tj
+T*
+(connection exists.) Tj
+T*
+() Tj
+T*
+(Lines 247-265: query MySQL for one available listing, normalize it, fallback on errors, and) Tj
+T*
+(close the cursor.) Tj
+T*
+() Tj
+T*
+(Lines 267-271: create_inquiry stores inquiry data in DEMO_INQUIRIES and returns False when) Tj
+T*
+(MySQL is unavailable.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 561 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+14 TL
+(Lines 273-295: insert inquiry data into MySQL, commit on success, rollback on failure, and) Tj
+T*
+(close the cursor.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(SAMPLE SEARCH) Tj
+T*
+() Tj
+T*
+(Lines 298-305: _search_sample_listings starts from available sample listings and normalizes) Tj
+T*
+(filter values.) Tj
+T*
+() Tj
+T*
+(Lines 307-324: apply the same filters in Python that the MySQL query applies in SQL.) Tj
+T*
+() Tj
+T*
+(Lines 326-331: return copied listings sorted with featured listings first and lower rent) Tj
+T*
+(first.) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000203 00000 n 
+0000002171 00000 n 
+0000002297 00000 n 
+0000004333 00000 n 
+0000004459 00000 n 
+0000005070 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5196
+%%EOF
